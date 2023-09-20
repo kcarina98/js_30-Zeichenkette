@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeichenkette trennen</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <form onsubmit="return false">
+      <div>
+        <label for="zeichenkette">Zu trennende Zeichenkette</label>
+        <input type="text" id="zeichenkette" />
+      </div>
+
+      <label class="labelTrennen" for="trennen">Woran trennen?</label>
+      <input type="text" id="trennen" />
+
+      <!-- -Radio Buttons -->
+      <label for="davor">Davor</label>
+      <input type="radio" name="auswahl" id="davor" />
+      <label for="danach">Danach</label>
+      <input type="radio" name="auswahl" id="danach" />
+
+      <!-- -Klick mich - Button -->
+      <button onclick="clickme()" type="submit">Klick mich</button>
+    </form>
+
+    <p class="output"></p>
+    <!-- JS -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

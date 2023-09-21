@@ -1,4 +1,5 @@
 function clickme() {
+  // Daten ausgeben
   let first = document.querySelector("#zeichenkette").value;
   let second = document.querySelector("#trennen").value;
   let index = first.indexOf(second);
@@ -18,11 +19,17 @@ function clickme() {
   let davor = document.querySelector("#davor").checked;
   let danach = document.querySelector("#danach").checked;
 
-  if (davor === true) {
+  // *wenn davor geklickt ist und das Zeichen vorkommt
+  if (davor === true && first.includes(second)) {
     output.innerHTML = `${cut1} <br> ${cutDavor}`;
-  } else if (danach === true) {
+    // *wenn danach geklickt ist und das Zeichen vorkommt
+  } else if (danach === true && first.includes(second)) {
     output.innerHTML = `${cut2} <br> ${cutDanach}`;
-  } else {
+    // *wenn weder davor noch danach geklickt ist und das Zeichen vorkommt
+  } else if (first.includes(second)) {
     output.innerHTML = `Bitte wähle aus, ob vor oder nach "${second}" getrennt werden soll.`;
+    // *wenn das Zeichen nicht in der Zeichenkette vorkommt
+  } else {
+    output.innerHTML = "Dein Zeichen kommt nicht in der Zeichenkette vor!";
   }
 }
